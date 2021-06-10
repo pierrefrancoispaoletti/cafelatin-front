@@ -12,8 +12,8 @@ import {
 } from "@fortawesome/pro-duotone-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const secondary = "#FFA000"
-const primary = "#D0021B"
+export const secondary = "#FFA000";
+export const primary = "#D0021B";
 
 const categories = [
   {
@@ -135,18 +135,24 @@ const categories = [
           <FontAwesomeIcon
             size="3x"
             icon={faBeer}
-            style={{ "--fa-primary-color": "#f1f285" }}
+            style={{
+              "--fa-primary-color": primary,
+              "--fa-secondary-color": secondary,
+            }}
           />
         ),
       },
       {
-        name: "Apéritifs",
+        name: "Apéritifs et Alcools",
         slug: "aperitifs",
         icon: (
           <FontAwesomeIcon
             size="3x"
             icon={faGlassWhiskeyRocks}
-            style={{ "--fa-primary-color": "#f1f285" }}
+            style={{
+              "--fa-primary-color": primary,
+              "--fa-secondary-color": secondary,
+            }}
           />
         ),
       },
@@ -157,7 +163,10 @@ const categories = [
           <FontAwesomeIcon
             size="3x"
             icon={faWineBottle}
-            style={{ "--fa-primary-color": "#f1f285" }}
+            style={{
+              "--fa-primary-color": primary,
+              "--fa-secondary-color": secondary,
+            }}
           />
         ),
       },

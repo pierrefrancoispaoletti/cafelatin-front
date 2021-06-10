@@ -66,7 +66,10 @@ const EditProductModal = ({
   };
 
   useEffect(() => {
-    if (editedProduct.category !== "rouges" || editedProduct.category !== "premiums") {
+    if (
+      editedProduct.category !== "rouges" ||
+      editedProduct.category !== "premiums"
+    ) {
       setEditedProduct({ ...editedProduct, subCategory: "" });
     }
   }, [editedProduct.category]);
@@ -143,15 +146,6 @@ const EditProductModal = ({
               onChange={(e) => changeProduct(e)}
             />
           </Form.Field>
-          <Form.Field>
-            <label>Région</label>
-            <input
-              value={editedProduct.region}
-              name="region"
-              type="text"
-              onChange={(e) => changeProduct(e)}
-            />
-          </Form.Field>
           <Form.Field required error={!editedProduct.price}>
             <label>Prix</label>
             <input
@@ -180,8 +174,7 @@ const EditProductModal = ({
                 )
             )}
           </Form.Field>
-          {(editedProduct.type === "vins" ||
-            editedProduct.type === "alcools") && (
+          {editedProduct.type === "alcools" && (
             <Form.Field required error={!editedProduct.category}>
               <label>Categorie de Produit</label>
               {categories.map(
@@ -198,31 +191,6 @@ const EditProductModal = ({
                       checked={editedProduct.category === subC.slug}
                     />
                   ))
-              )}
-            </Form.Field>
-          )}
-          {(editedProduct.category === "rouges" ||
-            editedProduct.category === "premiums") && (
-            <Form.Field required error={!editedProduct.subCategory}>
-              <label>Sous Catégorie de Produit</label>
-              {categories.map(
-                (cat) =>
-                  cat["slug"] === editedProduct.type &&
-                  cat.subCategories?.map(
-                    (subC) =>
-                      subC["slug"] === editedProduct.category &&
-                      subC.subCat.map((sC) => (
-                        <Radio
-                          style={{ padding: 5 }}
-                          key={sC.slug}
-                          label={sC.name}
-                          name={sC.slug}
-                          value={sC.slug}
-                          onChange={() => onChangeSubCategoryRadio(sC.slug)}
-                          checked={editedProduct.subCategory === sC.slug}
-                        />
-                      ))
-                  )
               )}
             </Form.Field>
           )}
@@ -248,11 +216,7 @@ const EditProductModal = ({
             !editedProduct.name ||
             !editedProduct.price ||
             !editedProduct.type ||
-            ((editedProduct.type === "vins" || editedProduct.type === "alcools") &&
-              !editedProduct.category) ||
-            ((editedProduct.category === "rouges" ||
-              editedProduct.category === "premiums") &&
-              !editedProduct.subCategory)
+            (editedProduct.type === "alcools" && !editedProduct.category)
           }
           loading={loading}
           color="purple"

@@ -4,6 +4,7 @@ import { Translator, Translate } from "react-auto-translate";
 import React from "react";
 import { Header } from "semantic-ui-react";
 import "./productitem.css";
+import { primary, secondary } from "../../../datas/categories";
 import { GOOGLE_API_KEY } from "../../../_const/_const";
 
 const ProductItem = ({
@@ -25,7 +26,7 @@ const ProductItem = ({
 }) => {
   const userLang = navigator.language || navigator.userLanguage;
 
-  console.log(product)
+  console.log(product);
 
   const cacheProvider = {
     get: (language, key) =>
@@ -44,26 +45,18 @@ const ProductItem = ({
   return (
     <div
       className="productitem"
-      style={{ display: visible ? "" : user ? "" : "none" }}
+      style={{
+        display: visible ? "" : user ? "" : "none",
+        background: secondary,
+      }}
     >
       <div className="productitem-header">
-        <Header
-          as="h3"
-          style={
-            type === "vins" && category === "rouges"
-              ? { color: "darkred" }
-              : type === "vins" && category === "roses"
-              ? { color: "#fec5d9" }
-              : type === "vins" && category === "blancs"
-              ? { color: "#f1f285" }
-              : { color: "" }
-          }
-        >
+        <Header as="h3" style={{ color: "white" }}>
           {!visible ? "Caché : " : ""}
           {name}
           {image && (
             <FontAwesomeIcon
-              style={{ color: "white", margin: 8 }}
+              style={{ color: secondary, margin: 8 }}
               icon={faSearch}
               onClick={() => {
                 setSelectedProduct(product);
@@ -73,11 +66,11 @@ const ProductItem = ({
           )}
           {choice ? (
             <FontAwesomeIcon
-                className="bosschoice alvp__icon"
+              className="bosschoice alvp__icon"
               icon={faHeartCircle}
               style={{
-                "--fa-primary-color": "darkred",
-                "--fa-secondary-color": "transparent",
+                "--fa-primary-color": primary,
+                "--fa-secondary-color": secondary,
               }}
               size="2x"
             />
@@ -85,20 +78,27 @@ const ProductItem = ({
             ""
           )}
         </Header>
-        <span className="price">
-          {price.toFixed(2)}
-          <small>€</small>
-        </span>
+        {price !== 0 && (
+          <span
+            className="price"
+            style={{ background: primary, color: secondary }}
+          >
+            {price.toFixed(2).toString()}
+            <small>€</small>
+          </span>
+        )}
       </div>
-      {region && <div className="region">{region}</div>}
       {description && (
         <Translator
           cacheProvider={cacheProvider}
           from="fr"
-          to={userLang.substr(0,2)}
+          to={userLang.substr(0, 2)}
           googleApiKey={GOOGLE_API_KEY}
         >
-          <p className="description">
+          <p
+            className="description"
+            style={{ background: primary, color: "white" }}
+          >
             <Translate>{description}</Translate>
           </p>
         </Translator>

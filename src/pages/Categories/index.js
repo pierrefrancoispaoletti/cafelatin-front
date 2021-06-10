@@ -16,7 +16,7 @@ import {
 import AdminCrudButtons from "../../components/Small/AdminCrudButtons";
 import ProductItem from "../../components/Small/ProductItem";
 import ProductsFilteringMenu from "../../components/Small/ProductsFilteringMenu";
-import categories from "../../datas/categories";
+import categories, { primary, secondary } from "../../datas/categories";
 import { $SERVER } from "../../_const/_const";
 import "./categories.css";
 const Categories = ({
@@ -41,7 +41,6 @@ const Categories = ({
   const { name, subCategories } = selectedCategory;
   const [loading, setLoading] = useState(false);
 
-  
   useEffect(() => {
     setFilteredProducts(
       products.filter((p) => p.type === selectedCategory.slug)
@@ -57,7 +56,7 @@ const Categories = ({
 
   useEffect(() => {
     if (dropdownValue) {
-      setDropdownValue(dropdownValue)
+      setDropdownValue(dropdownValue);
       setFilteredProducts(
         products?.filter((p) => p.subCategory === dropdownValue)
       );
@@ -153,13 +152,10 @@ const Categories = ({
         className="categories-header"
         as="h2"
         style={
-          activeMenu === "rouges"
-            ? { color: "darkred" }
-            : activeMenu === "roses"
-            ? { color: "#fec5d9" }
-            : activeMenu === "blancs"
-            ? { color: "#f1f285" }
-            : { color: "white" }
+          {
+            background: primary,
+            color: secondary
+          }
         }
       >
         {activeMenu ? `Les ${activeMenu}` : name}
@@ -179,6 +175,7 @@ const Categories = ({
       <div className="products">
         {filteredProducts
           ?.sort((a, b) => a.price - b.price)
+          .sort((a, b) => b.choice - a.choice)
           .map((p) => (
             <>
               {user && (

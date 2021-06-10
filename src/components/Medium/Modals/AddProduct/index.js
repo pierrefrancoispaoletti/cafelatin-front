@@ -181,19 +181,10 @@ const AddProductModal = ({
               onChange={(e) => changeProduct(e)}
             />
           </Form.Field>
-          <Form.Field>
-            <label>Région</label>
-            <input
-              value={product.region}
-              name="region"
-              type="text"
-              onChange={(e) => changeProduct(e)}
-            />
-          </Form.Field>
           <Form.Field required error={!product.price}>
             <label>Prix</label>
             <input
-              min={1}
+              min={0}
               step={0.1}
               value={product.price}
               name="price"
@@ -218,7 +209,7 @@ const AddProductModal = ({
                 )
             )}
           </Form.Field>
-          {(product.type === "vins" || product.type === "alcools") && (
+          {product.type === "alcools" && (
             <Form.Field required error={!product.category}>
               <label>Categorie de Produit</label>
               {categories.map(
@@ -235,31 +226,6 @@ const AddProductModal = ({
                       checked={product.category === subC.slug}
                     />
                   ))
-              )}
-            </Form.Field>
-          )}
-          {(product.category === "rouges" ||
-            product.category === "premiums") && (
-            <Form.Field required error={!product.subCategory}>
-              <label>Sous Catégorie de Produit</label>
-              {categories.map(
-                (cat) =>
-                  cat["slug"] === product.type &&
-                  cat.subCategories?.map(
-                    (subC) =>
-                      subC["slug"] === product.category &&
-                      subC.subCat.map((sC) => (
-                        <Radio
-                          style={{ padding: 5 }}
-                          key={sC.slug}
-                          label={sC.name}
-                          name={sC.slug}
-                          value={sC.slug}
-                          onChange={() => onChangeSubCategoryRadio(sC.slug)}
-                          checked={product.subCategory === sC.slug}
-                        />
-                      ))
-                  )
               )}
             </Form.Field>
           )}
@@ -303,11 +269,7 @@ const AddProductModal = ({
             !product.name ||
             !product.price ||
             !product.type ||
-            ((product.type === "vins" || product.type === "alcools") &&
-              !product.category) ||
-            ((product.category === "rouges" ||
-              product.category === "premiums") &&
-              !product.subCategory)
+            (product.type === "alcools" && !product.category)
           }
           loading={loading}
           color="green"
