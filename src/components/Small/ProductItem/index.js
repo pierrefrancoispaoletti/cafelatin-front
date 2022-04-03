@@ -26,8 +26,6 @@ const ProductItem = ({
 }) => {
   const userLang = navigator.language || navigator.userLanguage;
 
-  console.log(product);
-
   const cacheProvider = {
     get: (language, key) =>
       ((JSON.parse(localStorage.getItem("translations")) || {})[key] || {})[

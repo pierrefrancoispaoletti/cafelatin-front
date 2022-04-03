@@ -17,7 +17,7 @@ export const primary = "#D0021B";
 
 const categories = [
   {
-    name: "Entrées",
+    name: "Salades Repas",
     slug: "entrées",
     icon: (
       <FontAwesomeIcon
@@ -45,8 +45,8 @@ const categories = [
     ),
   },
   {
-    name: "Tapas",
-    slug: "tapas",
+    name: "Bruschettas",
+    slug: "bruschettas",
     icon: (
       <FontAwesomeIcon
         size="4x"
@@ -58,6 +58,20 @@ const categories = [
       />
     ),
   },
+  // {
+  //   name: "Tapas",
+  //   slug: "tapas",
+  //   icon: (
+  //     <FontAwesomeIcon
+  //       size="4x"
+  //       icon={faPepperHot}
+  //       style={{
+  //         "--fa-primary-color": primary,
+  //         "--fa-secondary-color": secondary,
+  //       }}
+  //     />
+  //   ),
+  // },
   {
     name: "Desserts",
     slug: "desserts",
