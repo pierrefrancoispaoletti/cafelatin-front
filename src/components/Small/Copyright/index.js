@@ -3,7 +3,8 @@ import {
   faEnvelope,
   faHeart,
   faPhone,
-} from "@fortawesome/pro-duotone-svg-icons";
+} from "@fortawesome/free-solid-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Divider, Header } from "semantic-ui-react";
@@ -22,9 +23,7 @@ const Copyright = ({
   return (
     <div className="footer">
       <div>
-        <Header as="h3">
-          Retrouvez nous sur :{" "}
-        </Header>
+        <Header as="h3">Retrouvez nous sur : </Header>
       </div>
       <div className="footer__icons">
         <a target="_blank" href="https://www.facebook.com/" rel="noreferrer">
@@ -50,9 +49,7 @@ const Copyright = ({
       </div>
       <Divider />
       <div>
-        <Header as="h3">
-          Contactez nous !{" "}
-        </Header>
+        <Header as="h3">Contactez nous ! </Header>
       </div>
       <div className="footer__icons">
         <a href={`mailto:`}>

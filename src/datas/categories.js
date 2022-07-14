@@ -3,13 +3,13 @@ import {
   faCocktail,
   faCoffee,
   faCookieBite,
-  faGlassCitrus,
-  faGlassWhiskeyRocks,
-  faHatChef,
+  faGlassWhiskey,
+  faMartiniGlassCitrus,
   faPepperHot,
-  faSalad,
+  faPlateWheat,
+  faUtensils,
   faWineBottle,
-} from "@fortawesome/pro-duotone-svg-icons";
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const secondary = "#FFA000";
@@ -22,7 +22,7 @@ const categories = [
     icon: (
       <FontAwesomeIcon
         size="4x"
-        icon={faSalad}
+        icon={faPlateWheat}
         style={{
           "--fa-primary-color": primary,
           "--fa-secondary-color": secondary,
@@ -36,7 +36,7 @@ const categories = [
     icon: (
       <FontAwesomeIcon
         size="4x"
-        icon={faHatChef}
+        icon={faUtensils}
         style={{
           "--fa-primary-color": primary,
           "--fa-secondary-color": secondary,
@@ -106,7 +106,7 @@ const categories = [
     icon: (
       <FontAwesomeIcon
         size="4x"
-        icon={faGlassCitrus}
+        icon={faMartiniGlassCitrus}
         style={{
           "--fa-primary-color": primary,
           "--fa-secondary-color": secondary,
@@ -134,7 +134,7 @@ const categories = [
     icon: (
       <FontAwesomeIcon
         size="4x"
-        icon={faGlassWhiskeyRocks}
+        icon={faGlassWhiskey}
         style={{
           "--fa-primary-color": primary,
           "--fa-secondary-color": secondary,
@@ -162,7 +162,7 @@ const categories = [
         icon: (
           <FontAwesomeIcon
             size="3x"
-            icon={faGlassWhiskeyRocks}
+            icon={faGlassWhiskey}
             style={{
               "--fa-primary-color": primary,
               "--fa-secondary-color": secondary,

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { faPlus } from "@fortawesome/pro-duotone-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
@@ -151,12 +151,10 @@ const Categories = ({
       <Header
         className="categories-header"
         as="h2"
-        style={
-          {
-            background: primary,
-            color: secondary
-          }
-        }
+        style={{
+          background: primary,
+          color: secondary,
+        }}
       >
         {activeMenu ? `Les ${activeMenu}` : name}
       </Header>

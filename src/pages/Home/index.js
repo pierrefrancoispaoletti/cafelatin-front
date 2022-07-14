@@ -1,11 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import {
-  faEdit,
-  faPlus,
-  faThumbsUp,
-  faTrashAlt,
-} from "@fortawesome/pro-duotone-svg-icons";
+
+import { faPlus, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import React, { useEffect, useState } from "react";

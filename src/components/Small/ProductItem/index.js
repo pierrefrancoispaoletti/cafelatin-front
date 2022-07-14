@@ -1,4 +1,3 @@
-import { faHeartCircle, faSearch } from "@fortawesome/pro-duotone-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Translator, Translate } from "react-auto-translate";
 import React from "react";
@@ -6,6 +5,10 @@ import { Header } from "semantic-ui-react";
 import "./productitem.css";
 import { primary, secondary } from "../../../datas/categories";
 import { GOOGLE_API_KEY } from "../../../_const/_const";
+import {
+  faHeartCircleMinus,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ProductItem = ({
   product,
@@ -51,7 +54,15 @@ const ProductItem = ({
       <div className="productitem-header">
         <Header as="h3" style={{ color: "white" }}>
           {!visible ? "Caché : " : ""}
-          {name}
+          <Translator
+            cacheProvider={cacheProvider}
+            from="fr"
+            to={userLang.substr(0, 2)}
+            googleApiKey={GOOGLE_API_KEY}
+          >
+            <Translate>{name}</Translate>
+          </Translator>
+
           {image && (
             <FontAwesomeIcon
               style={{ color: secondary, margin: 8 }}
@@ -65,7 +76,7 @@ const ProductItem = ({
           {choice ? (
             <FontAwesomeIcon
               className="bosschoice alvp__icon"
-              icon={faHeartCircle}
+              icon={faHeartCircleMinus}
               style={{
                 "--fa-primary-color": primary,
                 "--fa-secondary-color": secondary,

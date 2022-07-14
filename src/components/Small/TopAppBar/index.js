@@ -1,4 +1,4 @@
-import { faBars, faUser } from "@fortawesome/pro-duotone-svg-icons";
+import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -15,7 +15,11 @@ const TopAppBar = ({
     <div className="topappbar">
       <Link to="/" onClick={() => setSelectedCategory({})}>
         <div className="topappbar-image">
-          <img height="120px" src="./assets/images/logocafelatin.png" alt="logo cafe latin" />
+          <img
+            height="120px"
+            src="./assets/images/logocafelatin.png"
+            alt="logo cafe latin"
+          />
         </div>
       </Link>
       <div className="topappbar-icons">
