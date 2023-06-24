@@ -4,6 +4,7 @@ import {
   faCoffee,
   faCookieBite,
   faGlassWhiskey,
+  faIceCream,
   faMartiniGlassCitrus,
   faPepperHot,
   faPlateWheat,
@@ -19,51 +20,24 @@ const categories = [
   {
     name: "Salades Repas",
     slug: "entrées",
-    icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faPlateWheat}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
-    ),
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faPlateWheat} />,
   },
   {
     name: "Plats",
     slug: "plats",
-    icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faUtensils}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
-    ),
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faUtensils} />,
   },
   {
     name: "Bruschettas",
     slug: "bruschettas",
-    icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faPepperHot}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
-    ),
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faPepperHot} />,
   },
   // {
   //   name: "Tapas",
   //   slug: "tapas",
   //   icon: (
   //     <FontAwesomeIcon
-  //       size="4x"
+  //       size="4x" color="#DF920F"
   //       icon={faPepperHot}
   //       style={{
   //         "--fa-primary-color": primary,
@@ -75,72 +49,34 @@ const categories = [
   {
     name: "Desserts",
     slug: "desserts",
-    icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faCookieBite}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
-    ),
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faCookieBite} />,
+  },
+  {
+    name: "Glaces",
+    slug: "glaces",
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faIceCream} />,
   },
   {
     name: "Les Cocktails",
     slug: "cocktails",
-    icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faCocktail}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
-    ),
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faCocktail} />,
   },
   {
     name: "Boissons Fraîches",
     slug: "boissons-fraiches",
     icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faMartiniGlassCitrus}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
+      <FontAwesomeIcon size="4x" color="#DF920F" icon={faMartiniGlassCitrus} />
     ),
   },
   {
     name: "Boissons Chaudes",
     slug: "boissons-chaudes",
-    icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faCoffee}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
-    ),
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faCoffee} />,
   },
   {
     name: "Les Alcools",
     slug: "alcools",
-    icon: (
-      <FontAwesomeIcon
-        size="4x"
-        icon={faGlassWhiskey}
-        style={{
-          "--fa-primary-color": primary,
-          "--fa-secondary-color": secondary,
-        }}
-      />
-    ),
+    icon: <FontAwesomeIcon size="4x" color="#DF920F" icon={faGlassWhiskey} />,
     subCategories: [
       {
         name: "Bières",
